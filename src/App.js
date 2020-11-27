@@ -40,7 +40,7 @@ const App = () => {
               return newDetails
             })           
           }       
-          return [{price,quantity,productId}]
+          return [...prevDetails, {price,quantity,productId}]
         })
   }
   const updateProduct = (quantity, price, productId) => {
@@ -326,6 +326,7 @@ const Products = ({ productId, qty, removeProduct, updateQuantity }) => {
   useEffect(() => {
     const newPrice = price * Quantity;
     setPriceTag(newPrice);
+    console.log("from329")
     updateQuantity(Quantity,price, productId);
   }, [Quantity, price]);
 
